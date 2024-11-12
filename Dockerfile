@@ -21,7 +21,7 @@ FROM node:22
 
 # Set working directory
 WORKDIR /app
-
+# 
 # Copy the necessary files for running the application
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/.next ./.next
