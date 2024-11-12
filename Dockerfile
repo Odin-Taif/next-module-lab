@@ -30,10 +30,10 @@ COPY --from=builder /app/node_modules ./node_modules
 
 # Set environment variables
 ENV NODE_ENV=production
-ENV PORT=3001
+ENV PORT=3000
 
 # Expose the port the app runs on
-EXPOSE 3001
+EXPOSE 3000
 
 # Run the Next.js application
 CMD ["npx", "next", "start"]
