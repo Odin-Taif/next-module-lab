@@ -16,8 +16,8 @@ COPY . .
 # Build the Next.js application
 RUN npm run build
 
-# --- Production stage ---
-FROM node:18-alpine AS runner
+# Use an official Node.js runtime as the base image
+FROM node:22
 
 # Set working directory
 WORKDIR /app
