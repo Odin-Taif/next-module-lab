@@ -1,17 +1,24 @@
 "use client";
 
 import { sendMessageAction } from "./actions";
+import { Message } from "./types";
 
 export function SendMessage() {
-  async function onSendMessage() {
-    console.log("Inside onSend");
-
-    await sendMessageAction({ content: "Hi!" });
-  }
-
   return (
-    <button className="btn btn-primary" onClick={onSendMessage}>
-      Send
-    </button>
+    <>
+      <form
+        action={(formData: FormData) => {
+          const message: Message = {
+            content: formData.get("content") as string,
+          };
+          return sendMessageAction(message);
+        }}
+      >
+        <input type="text" name="content" required />
+        <button type="submit" className="btn btn-primary">
+          Send
+        </button>
+      </form>
+    </>
   );
 }
