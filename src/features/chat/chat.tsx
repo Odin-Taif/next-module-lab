@@ -9,7 +9,11 @@ export async function Chat() {
   return (
     <>
       <SendMessage />
-      <div>Messages: {JSON.stringify(messages, null, 2)}</div>
+      <div>
+        {messages.map((message, index) => {
+          return <div key={index}>{message.content}</div>;
+        })}
+      </div>
     </>
   );
 }
