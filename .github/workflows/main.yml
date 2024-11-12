@@ -74,7 +74,6 @@ jobs:
 
             # Run the new container with environment variables
             docker run -d -p 3000:3000 --name express-api-ts-1 \
-              -e DATABASE_URL="${{ secrets.DATABASE_URL }}" \
-              -e SECRET_KEY="${{ secrets.SECRET_KEY }}" \
+
               mjdthif/express-api-ts
           EOF
