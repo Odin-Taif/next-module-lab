@@ -8,7 +8,7 @@ export function createRepository() {
       return data;
     },
     async sendMessage(message: Message) {
-      data.push(message);
+      await data.push(message);
     },
   };
 }
